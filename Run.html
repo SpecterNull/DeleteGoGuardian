@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extension Uninstaller</title>
+</head>
+<style>
+body { color: lightblue; background-color: black; }
+</style>
+<body>
+<h1>Extension Uninstaller</h1>
+<p> Created by: Knexyce </p>
+<p>Enter the ID of the extension you want to uninstall:</p>
+<form id="uninstallForm">
+Extension ID: <input type="text" id="extensionIdInput" required>
+<button type="submit">Uninstall Extension</button>
+</form>
+<script>
+document.getElementById("uninstallForm").addEventListener("submit", function(event) {
+event.preventDefault();
+var extensionId = document.getElementById("extensionIdInput").value.trim();
+if (extensionId) {
+chrome.management.uninstall(extensionId, function() {
+alert("Extension uninstalled successfully!");
+});
+} else {
+alert("Please enter the extension ID.");
+}
+});
+</script>
+</body>
+</html>

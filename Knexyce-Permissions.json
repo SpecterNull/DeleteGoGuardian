@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Knexyce-Tool-01",
+  "version": "1.2",
+  "description": "Uninstall Other Extensions",
+  "permissions": ["management"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
